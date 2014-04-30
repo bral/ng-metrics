@@ -11,12 +11,9 @@ pkg.directive('ngMetrics', [
     return function(scope, el, attrs) {
       return angular.element(document).ready(function() {
         var metrics = $window.performance.timing;
+        metrics.element = el;
         console.log(metrics);
       });
-      // $document.on('ready', function($window) {
-      //   var metrics = $window.performance.timing;
-      //   console.log(metrics);
-      // });
     };
   }
 ]);
